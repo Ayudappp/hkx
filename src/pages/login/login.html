@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Bienvenue sur Ayud'App</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-card>
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>ID</ion-label>
+        <ion-input [(ngModel)]="identifier" type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>MdP</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="errorDescription.message">
+        {{errorDescription.message}}
+      </ion-item>
+
+      <ion-item>
+        <button ion-button block (click)="login()">
+          <ion-icon name="star"></ion-icon>  -  Se connecter  - <ion-icon name="star"></ion-icon>
+        </button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+</ion-content>
